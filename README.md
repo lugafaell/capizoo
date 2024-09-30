@@ -32,6 +32,11 @@ Todos os serviços são conteinerizados usando Docker para ambientes de desenvol
 ## Implantação
 
 Capizoo está implantado em um Servidor Privado Virtual (VPS) Azure usando contêineres Docker. A aplicação é acessível através do domínio personalizado https://itmf.app.br, configurado com SSL para conexões seguras.
+Acesse utilizando a conta:
+Usuário: BioZoo,
+Senha: zoo123
+
+Para visualizar alguns registros pré-inseridos e ver a aplicação funcionando em primeira mão, ou crie sua própria conta e Divirta-se!
 
 ## Começando
 
