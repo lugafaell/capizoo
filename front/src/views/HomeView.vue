@@ -293,7 +293,7 @@ export default {
   background-color: #f4f4f9;
   color: #4a4a4a;
   font-family: Arial, sans-serif;
-  position: relative; /* Add this */
+  position: relative;
 }
 
 .mobile-header {
@@ -570,6 +570,7 @@ export default {
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
+  margin-left: 60px;
 }
 
 .record-tag {
@@ -639,6 +640,14 @@ export default {
 
   .sidebar-open {
     transform: translateX(0);
+  }
+
+  .records {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    margin-left: 0px;
   }
 
   .records-list {
