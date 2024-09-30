@@ -1,0 +1,70 @@
+version: "3"
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: 200565
+      MYSQL_DATABASE: capizoo
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 200565
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./db-init:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/mysql
+    networks:
+      - my_network
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h db -uuser -p200565 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    command: --init-file /docker-entrypoint-initdb.d/init.sql
+
+  backend:
+    build: ./back
+    container_name: backend_service
+    ports:
+      - "3000:3000"
+    # volumes:
+    #  - ./back:/app
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_USER: user
+      DB_PASSWORD: 200565
+      DB_DATABASE: capizoo
+    networks:
+      - my_network
+
+  frontend:
+    build: ./front
+    container_name: frontend_service
+    ports:
+      - "8080:80"
+    networks:
+      - my_network
+
+  nginx-proxy-manager:
+    image: "jc21/nginx-proxy-manager:latest"
+    container_name: proxy_manager
+    restart: always
+    ports:
+      - "80:80"
+      - "81:81"
+      - "443:443"
+    volumes:
+      - ./nginx/data:/data
+      - ./nginx/letsencrypt:/etc/letsencrypt
+    networks:
+      - my_network
+
+volumes:
+  db_data:
+
+networks:
+  my_network:
+    driver: bridge
