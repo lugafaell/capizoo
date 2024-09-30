@@ -429,15 +429,17 @@ textarea {
   position: relative;
   width: 100%;
   max-width: 400px;
-  height: 300px;
+  aspect-ratio: 4 / 3;
+  height: auto;
 }
 
 .carousel-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 5px;
   --animate-duration: 0.3s;
+  max-height: 100%;
 }
 
 .carousel-controls {
@@ -509,6 +511,18 @@ textarea {
 
   .image-carousel {
     margin-top: 20px;
+  }
+
+  .carousel-container {
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .carousel-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
   }
 }
 </style>
