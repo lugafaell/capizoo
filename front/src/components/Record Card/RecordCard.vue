@@ -129,7 +129,7 @@ p {
 }
 
 @media (max-width: 768px) {
-  .record-card[data-v-098e517e] {
+  .record-card {
     background-color: #fbfcf8;
     padding: 15px;
     border-radius: 10px;

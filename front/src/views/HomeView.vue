@@ -572,15 +572,6 @@ export default {
   margin-top: 20px;
 }
 
-.record-card {
-  background-color: #fbfcf8;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: calc(25% - 20px);
-  position: relative;
-}
-
 .record-tag {
   position: absolute;
   top: 10px;
@@ -652,7 +643,7 @@ export default {
 
   .records-list {
     margin-left: 0;
-    margin-top: 60px; /* Add this to account for the mobile header */
+    margin-top: 60px;
   }
 
   .records-list-expanded {
