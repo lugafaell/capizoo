@@ -70,7 +70,7 @@ p {
     box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
     width: 20%;
     position: relative;
-    margin-left: 60px;
+    margin-left: 0px;
 }
 
 .record-card:hover {
