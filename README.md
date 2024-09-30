@@ -36,7 +36,6 @@ Capizoo está implantado em um Servidor Privado Virtual (VPS) Azure usando cont�
 Acesse utilizando a conta:
 
 Usuário: BioZoo,
-
 Senha: zoo123
 
 Para visualizar alguns registros pré-inseridos e ver a aplicação funcionando em primeira mão, ou crie sua própria conta e Divirta-se!
