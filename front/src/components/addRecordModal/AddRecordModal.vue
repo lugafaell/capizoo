@@ -377,8 +377,9 @@ export default {
 }
 
 .tab-indicator.active {
-  background-color: #703220;
-  color: white;
+    background-color: #703220;
+    color: #fff;
+    margin: 0 10px 0 10px;
 }
 
 .tab-button {
