@@ -168,6 +168,11 @@ export default {
   },
   mounted() {
     this.fetchRecords();
+    this.checkScreenWidth();
+    window.addEventListener("resize", this.checkScreenWidth);
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.checkScreenWidth);
   },
   methods: {
     getUserInitials(name) {
@@ -214,6 +219,9 @@ export default {
     logout() {
       Cookies.remove("userId");
       this.$router.push("/");
+    },
+    checkScreenWidth() {
+      this.isSidebarOpen = window.innerWidth >= 768;
     },
     toggleSidebar() {
       this.isSidebarOpen = !this.isSidebarOpen;
