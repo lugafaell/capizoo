@@ -1,0 +1,75 @@
+# Capizoo
+
+Capizoo é uma plataforma abrangente para registro e organização de animais. Ela oferece uma maneira eficiente de gerenciar e acompanhar dados de animais, sendo ideal para clínicas veterinárias, abrigos de animais e proprietários de pets.
+
+## Funcionalidades
+
+- Interface amigável para registro de animais
+- Perfis detalhados de animais com campos personalizáveis
+- Funcionalidade de busca e filtro para acesso rápido aos registros de animais
+- Design responsivo para uso perfeito em desktops e dispositivos móveis
+
+## Stack Tecnológica
+
+- **Frontend**: Vue.js
+- **Backend**: Node.js com Express
+- **Banco de Dados**: MySQL
+- **Conteinerização**: Docker
+- **Hospedagem**: VPS Azure
+- **Domínio e SSL**: Domínio personalizado (itmf.app.br) com criptografia SSL
+
+## Arquitetura
+
+Capizoo segue uma arquitetura de microsserviços:
+
+1. **Serviço de Frontend**: Aplicação Vue.js que serve a interface do usuário
+2. **Serviço de Backend**: API Node.js com Express que lida com a lógica de negócios e gerenciamento de dados
+3. **Serviço de Banco de Dados**: MySQL.
+
+Todos os serviços são conteinerizados usando Docker para ambientes de desenvolvimento e implantação consistentes.
+
+## Implantação
+
+Capizoo está implantado em um Servidor Privado Virtual (VPS) Azure usando contêineres Docker. A aplicação é acessível através do domínio personalizado https://itmf.app.br, configurado com SSL para conexões seguras.
+
+## Começando
+
+Para executar o Capizoo localmente para desenvolvimento:
+
+1. Clone o repositório:
+   ```
+   git clone https://github.com/lugafaell/capizoo.git
+   cd capizoo
+   ```
+
+2. Instale as dependências:
+   ```
+   # Instale as dependências do frontend
+   cd front
+   npm install
+
+   # Instale as dependências do backend
+   cd back
+   npm install
+   ```
+
+3. Configure as variáveis de ambiente:
+   Crie arquivos `.env` nos diretórios `front` e `back/config` baseados nos arquivos `.env.example` fornecidos.
+
+4. Inicie os servidores de desenvolvimento:
+   ```
+   # Inicie o frontend
+   cd front
+   npm run serve
+
+   # Inicie o backend
+   cd back
+   node index.js
+   ```
+
+5. Acesse a aplicação em `http://localhost:8080` (ou na porta especificada na sua configuração de frontend)
+
+
+---
+
+Desenvolvido com ❤️ por Rafael de Menezes
