@@ -1,11 +1,12 @@
 # Capizoo
 
-Capizoo é uma plataforma abrangente para registro e organização de animais. Ela oferece uma maneira eficiente de gerenciar e acompanhar dados de animais, sendo ideal para clínicas veterinárias, abrigos de animais e proprietários de pets.
+Capizoo é uma plataforma abrangente para registro e organização de animais. Ela oferece uma maneira eficiente de gerenciar e acompanhar dados de animais, sendo ideal para clínicas veterinárias, abrigos de animais, proprietários de pets e zoologicos.
 
 ## Funcionalidades
 
 - Interface amigável para registro de animais
 - Perfis detalhados de animais com campos personalizáveis
+- Registro de Fotos para os seus Pets
 - Funcionalidade de busca e filtro para acesso rápido aos registros de animais
 - Design responsivo para uso perfeito em desktops e dispositivos móveis
 
