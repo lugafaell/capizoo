@@ -64,13 +64,13 @@ p {
 }
 
 .record-card {
-  background-color: #fbfcf8;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-  width: 30%;
-  position: relative;
-  margin-left: 60px;
+    background-color: #fbfcf8;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
+    width: 20%;
+    position: relative;
+    margin-left: 60px;
 }
 
 .record-card:hover {
