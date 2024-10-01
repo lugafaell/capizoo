@@ -74,8 +74,12 @@ Para executar o Capizoo localmente para desenvolvimento:
    cd back
    node index.js
    ```
-
-5. Acesse a aplicação em `http://localhost:8080` (ou na porta especificada na sua configuração de frontend)
+5. Caso opte por utilizar o docker, pode simples executar o docker compose configurado na raiz do projeto para facilitar a execução:
+   ```
+   # Construa e execute os containers
+   docker compose up --build
+   ```
+6. Acesse a aplicação em `http://localhost:8080` (ou na porta especificada na sua configuração de frontend). Em caso de utilização do docker acesse a porta que está expota o frontend da sua aplicação.
 
 
 ---
