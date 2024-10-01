@@ -74,7 +74,7 @@ Para executar o Capizoo localmente para desenvolvimento:
    cd back
    node index.js
    ```
-5. Caso opte por utilizar o docker, pode simples executar o docker compose configurado na raiz do projeto para facilitar a execução:
+5. Caso opte por utilizar o docker, pode simplesmente executar o docker compose configurado na raiz do projeto para facilitar a execução e instalação de todas as dependências necessárias:
    ```
    # Construa e execute os containers
    docker compose up --build
