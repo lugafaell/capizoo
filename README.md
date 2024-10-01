@@ -79,7 +79,7 @@ Para executar o Capizoo localmente para desenvolvimento:
    # Construa e execute os containers
    docker compose up --build
    ```
-6. Acesse a aplicação em `http://localhost:8080` (ou na porta especificada na sua configuração de frontend). Em caso de utilização do docker acesse a porta que está expota o frontend da sua aplicação.
+6. Acesse a aplicação em `http://localhost:8080` (ou na porta especificada na sua configuração de frontend). Em caso de utilização do docker acesse a porta que está exposta o frontend da sua aplicação.
 
 
 ---
