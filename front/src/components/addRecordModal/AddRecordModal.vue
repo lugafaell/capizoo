@@ -106,7 +106,6 @@
                 id="animalDiet"
                 v-model="animalDiet"
                 placeholder="Dieta do Animal"
-                required
               />
             </div>
           </div>
@@ -119,7 +118,6 @@
               id="observations"
               v-model="observations"
               placeholder="Digite suas observações"
-              required
             ></textarea>
           </div>
           <div class="form-area">
@@ -164,8 +162,11 @@
             v-if="currentStep === tabs.length - 1"
             type="submit"
             class="submit-button"
+            :disabled="!isUploadSuccessful || isLoading"
           >
-            <i class="fas fa-add"></i> Add Registro
+            <i v-if="isLoading" class="fas fa-spinner fa-spin"></i>
+            <i v-else class="fas fa-add"></i>
+            {{ isLoading ? "Carregando..." : "Add Registro" }}
           </button>
         </div>
       </form>
@@ -203,6 +204,8 @@ export default {
       observations: "",
       animalPictures: [],
       selectedFileNames: [],
+      isUploadSuccessful: false,
+      isLoading: false,
     };
   },
   watch: {
@@ -247,6 +250,9 @@ export default {
         formData.append("images", file);
       });
 
+      this.isLoading = true;
+      this.isUploadSuccessful = false;
+
       try {
         const response = await fetch(`${API_BASE_URL}/upload/upload`, {
           method: "POST",
@@ -260,8 +266,12 @@ export default {
         const data = await response.json();
 
         this.animalPictures = data.imageUrls.join(", ");
+        this.isUploadSuccessful = true;
       } catch (error) {
         console.error("Erro ao enviar as imagens:", error);
+        alert("Erro ao enviar as imagens. Por favor, tente novamente.");
+      } finally {
+        this.isLoading = false;
       }
     },
     async submitTask() {
@@ -276,8 +286,8 @@ export default {
         animalHealth: this.selectedHealth,
         animalHabitat: this.animalHabitat,
         animalBehavior: this.animalBehavior,
-        animalDiet: this.animalDiet,
-        observations: this.observations,
+        animalDiet: this.animalDiet.trim() || "Sem dieta informada",
+        observations: this.observations.trim() || "Sem observações",
         animalPictures: this.animalPictures,
         modificationDate: this.getCurrentDateTime(),
         userId: userId,
@@ -322,6 +332,7 @@ export default {
       this.animalDiet = "";
       this.observations = "";
       this.selectedFileNames = [];
+      this.isUploadSuccessful = false;
     },
   },
 };
@@ -525,5 +536,18 @@ select {
 
 .submit-button:hover {
   background: rgb(240, 240, 240);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-spin {
+  animation: spin 1s linear infinite;
 }
 </style>
