@@ -4,10 +4,10 @@ services:
     image: mysql:8.0
     container_name: mysql_db
     environment:
-      MYSQL_ROOT_PASSWORD: 200565
-      MYSQL_DATABASE: capizoo
-      MYSQL_USER: user
-      MYSQL_PASSWORD: 200565
+      MYSQL_ROOT_PASSWORD: your_root_password
+      MYSQL_DATABASE: your_db
+      MYSQL_USER: your_user
+      MYSQL_PASSWORD: your_password
     ports:
       - "3307:3306"
     volumes:
